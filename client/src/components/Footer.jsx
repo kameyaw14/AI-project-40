@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-yellow-500">Brand</h3>
+            <h3 className="text-2xl font-bold text-yellow-500">Personetics</h3>
             <p className="text-gray-400">
             Explore how Personetics can help you leverage financial-data intelligence to optimize
             customer experiences and deliver business impact.

@@ -9,11 +9,16 @@ import {
 import Navbar from "../components/Navbar";
 import InfiniteLogoBanner from "../components/InfiniteBanner";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const ProductsPage = () => {
+
+    const navigate = useNavigate();
+
   const services = [
     {
       title: "AI-Powered Fraud Detection System",
+      id: "fraud-detection",
       icon: <ShieldCheck className="h-8 w-8" />,
       features: [
         "Real-time transaction monitoring",
@@ -23,9 +28,11 @@ const ProductsPage = () => {
       ],
       description:
         "Our advanced AI system detects and prevents fraudulent activities across all digital channels with 99.8% accuracy.",
+      route: '/fraud-detection',
     },
     {
       title: "Instant Loan Approval Platform",
+      id: "loan-approval",
       icon: <BadgeDollarSign className="h-8 w-8" />,
       features: [
         "Creditworthiness analysis",
@@ -35,6 +42,7 @@ const ProductsPage = () => {
       ],
       description:
         "Revolutionary AI-driven loan processing that reduces approval time from days to minutes while maintaining compliance.",
+      route: '/loan-approval',
     },
   ];
 
@@ -100,7 +108,7 @@ const ProductsPage = () => {
                   </div>
 
                   <div className="flex gap-4">
-                    <button className="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                    <button onClick={() => navigate(service.route)} className="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
                       Request Demo
                     </button>
                     <button className="border-2 border-black text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors">

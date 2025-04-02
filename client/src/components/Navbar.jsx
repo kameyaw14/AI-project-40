@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [closeTimeout, setCloseTimeout] = useState(null);
+  const navigate = useNavigate()
 
   const navigation = [
     { name: "Home", href: "#", current: true },
@@ -12,9 +14,8 @@ const Navbar = () => {
       name: "Services",
       href: "#",
       submenu: [
-        { name: "Web Development", href: "#" },
-        { name: "Mobile Apps", href: "#" },
-        { name: "Cloud Solutions", href: "#" },
+        { name: "Fraud Detection", href: "/fraud-detection" },
+        { name: "Loan Approval", href: "#" },
       ],
     },
     {
@@ -50,7 +51,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-black">Brand</span>
+            <span className="text-2xl font-bold text-black cursor-pointer" onClick={() =>navigate("/") }>Personetics</span>
           </div>
 
           {/* Desktop Navigation */}
